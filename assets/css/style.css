@@ -1,0 +1,31 @@
+body {
+    font-family: 'Neucha', cursive;
+    color: #333333;
+}
+
+h1 {
+    color: #0066ff;
+}
+
+h5 {
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+input {
+    margin: 20px;
+}
+
+.input {
+    width: 200px;
+}
+
+.row {
+    margin: 40px 0px;
+}
+
+table, tr, td {
+    border: 1px solid #ff9933;
+    padding: 10px;
+    margin: auto;
+}
