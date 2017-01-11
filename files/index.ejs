@@ -14,14 +14,16 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <div class="row text-center">
+    <div class="container-fluid">
+        <div class="row text-center navbar navbar-default">
             <div class="col-md-12">
                 <h1>Attendance App</h1>
             </div>
         </div>
+    </div>
 
+    <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <form method="POST" action="/attendance">
@@ -36,13 +38,12 @@
             <div class="col-md-12">
 
                 <table>
-                    <tr>
+                    <tr class="heading">
                         <td>Student Name</td>
                         <td>Attendance Count</td>
-
                     </tr>
                     <% for(var i=0; i < numberOfStudents; i++) { %>
-                        <tr>
+                        <tr class="table_body">
                             <td>
                                 <%= students[i].name %>
                             </td>
@@ -55,11 +56,6 @@
 
             </div>
         </div>
-
-
-
-
-
 
 
     </div>

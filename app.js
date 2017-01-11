@@ -2,10 +2,10 @@
 const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
+const bodyParser = require('body-parser');
 
 // Initialize our app
 const app = express();
-const bodyParser = require('body-parser');
 
 app.use(express.static('assets'));
 app.set('views', path.join(__dirname, 'files'));

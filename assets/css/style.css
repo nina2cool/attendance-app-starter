@@ -1,23 +1,46 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
 body {
     font-family: 'Neucha', cursive;
     color: #333333;
+    /*background: url(background.jpg) no-repeat center;*/
+    background: url(background.jpg) no-repeat center;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.navbar {
+  box-shadow: 3px 3px 5px #999;
+
 }
 
 h1 {
-    color: #0066ff;
+    color: #2A8374;
 }
 
-h5 {
-    line-height: 1.5;
-    font-size: 1.2em;
+.header {
+  background: #f2f2f2;
+  border-bottom: 0.5px solid gray;
 }
 
 input {
     margin: 20px;
+    box-shadow: 3px 3px 5px #999;
+    border-radius: 5px;
+}
+
+input:hover {
+  transform: translate(1px, 1px);
 }
 
 .input {
     width: 200px;
+    box-shadow: 3px 3px 5px #999;
+    padding: 5px;
 }
 
 .row {
@@ -25,7 +48,22 @@ input {
 }
 
 table, tr, td {
-    border: 1px solid #ff9933;
+    /*border: 1px solid #ff9933;*/
     padding: 10px;
     margin: auto;
+
+}
+
+table {
+  box-shadow: 3px 3px 5px #999;
+  border-radius: 5px;
+}
+
+
+.heading {
+  background: lightblue;
+}
+
+.table_body {
+  background-color: #f2f2f2;
 }

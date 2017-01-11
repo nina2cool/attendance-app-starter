@@ -15,23 +15,34 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-    const newName = req.body.nameInput;
 
+    //get the name from the input form
+    var newName = req.body.nameInput;
+
+    //standardize the name so we can eliminate duplicates regardless of capitalization
+    firstLetter = newName.charAt(0);
+    firstLetter = firstLetter.toUpperCase();
+    restOfName = newName.slice(1);
+    restOfName = restOfName.toLowerCase();
+
+    formattedName = firstLetter + restOfName;
+
+    // if there are no students on the list, then add this name
     if (studentsList.length === 0) {
         studentsList = [{
-            name: newName,
+            name: formattedName,
             attendanceCount: 1
         }];
     } else {
 
         var currentStudent = false;
-
+        // if names on the list, loop through to see if there is a match.  If yes, add to the attendance count.  if not, add to the array.
         for (var i = 0; i < studentsList.length; i++) {
 
             currentName = studentsList[i]['name'];
             currentAttendanceCount = studentsList[i]['attendanceCount']
 
-            if (currentName === newName) {
+            if (currentName === formattedName) {
                 studentsList[i]['attendanceCount'] = currentAttendanceCount + 1;
                 currentStudent = true;
             }
@@ -40,7 +51,7 @@ router.post('/', function(req, res, next) {
 
         if (currentStudent === false) {
             studentsList.push({
-                name: newName,
+                name: formattedName,
                 attendanceCount: 1
             });
         }
